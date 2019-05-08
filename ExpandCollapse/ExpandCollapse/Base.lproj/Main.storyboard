@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test Table View Controller-->
+        <!--FAQs-->
         <scene sceneID="upN-bc-OrP">
             <objects>
                 <tableViewController id="Nfv-QR-8hD" customClass="TestTableViewController" customModule="ExpandCollapse" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,11 +99,99 @@ Label</string>
                             <outlet property="delegate" destination="Nfv-QR-8hD" id="76V-wJ-Mfo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CbC-SW-Bc9"/>
+                    <navigationItem key="navigationItem" title="FAQs" id="CbC-SW-Bc9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9z-W2-67L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.8" y="277.51124437781112"/>
+            <point key="canvasLocation" x="1855" y="-18"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jcb-lQ-lsJ">
+            <objects>
+                <viewController id="Aiv-Ud-Igt" customClass="ViewController" customModule="ExpandCollapse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KLl-TU-CQu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="sRb-PV-aD2">
+                                <rect key="frame" x="87.5" y="290" width="200" height="87"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-WP-bp3">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Table View Controller">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Nfv-QR-8hD" kind="show" id="b0h-Wv-nan"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-v5-ErH">
+                                        <rect key="frame" x="0.0" y="57" width="200" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Embedded Table View">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="PGG-P8-CiX" kind="show" id="CJC-uW-TVf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="QOB-Sj-U0m"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sRb-PV-aD2" firstAttribute="centerY" secondItem="KLl-TU-CQu" secondAttribute="centerY" id="Mp3-iq-7Yf"/>
+                            <constraint firstItem="sRb-PV-aD2" firstAttribute="centerX" secondItem="KLl-TU-CQu" secondAttribute="centerX" id="nej-Tk-K3d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7TV-IF-JBi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NhQ-sv-LWT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTg-i7-hRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="278"/>
+        </scene>
+        <!--FAQs-->
+        <scene sceneID="b9Y-uX-Ald">
+            <objects>
+                <viewController id="PGG-P8-CiX" customClass="EmbeddedViewController" customModule="ExpandCollapse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CbG-MD-qhp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g0-ib-1Bb">
+                                <rect key="frame" x="142" y="144" width="91.5" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AQ-U0-3Sy">
+                                <rect key="frame" x="0.0" y="269" width="375" height="398"/>
+                                <connections>
+                                    <segue destination="Nfv-QR-8hD" kind="embed" id="cqu-Iv-Tei"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0g0-ib-1Bb" firstAttribute="centerX" secondItem="CbG-MD-qhp" secondAttribute="centerX" id="75J-sW-vjg"/>
+                            <constraint firstItem="0g0-ib-1Bb" firstAttribute="top" secondItem="aWz-fH-J5i" secondAttribute="top" constant="80" id="KgE-0p-WOU"/>
+                            <constraint firstItem="aWz-fH-J5i" firstAttribute="trailing" secondItem="1AQ-U0-3Sy" secondAttribute="trailing" id="MX8-EL-cv4"/>
+                            <constraint firstItem="aWz-fH-J5i" firstAttribute="bottom" secondItem="1AQ-U0-3Sy" secondAttribute="bottom" id="Mn8-sR-Ufa"/>
+                            <constraint firstItem="1AQ-U0-3Sy" firstAttribute="leading" secondItem="aWz-fH-J5i" secondAttribute="leading" id="vX0-TL-q8Z"/>
+                            <constraint firstItem="1AQ-U0-3Sy" firstAttribute="top" secondItem="0g0-ib-1Bb" secondAttribute="bottom" constant="80" id="z1o-Sc-l9P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aWz-fH-J5i"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="FAQs" id="qX6-ua-pYL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OcA-D5-zg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vdz-Kx-KvK">
@@ -115,7 +204,7 @@ Label</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Nfv-QR-8hD" kind="relationship" relationship="rootViewController" id="Era-va-mfq"/>
+                        <segue destination="Aiv-Ud-Igt" kind="relationship" relationship="rootViewController" id="CGL-Zq-DpN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQw-ce-Z9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,4 +215,7 @@ Label</string>
     <resources>
         <image name="arrowDn" width="22" height="11"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="b0h-Wv-nan"/>
+    </inferredMetricsTieBreakers>
 </document>

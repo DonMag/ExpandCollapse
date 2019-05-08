@@ -167,3 +167,7 @@ class TestTableViewController: UITableViewController {
 	}
 	
 }
+
+class EmbeddedViewController: UIViewController {
+	
+}
