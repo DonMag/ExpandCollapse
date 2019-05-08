@@ -159,9 +159,9 @@ class TestTableViewController: UITableViewController {
 			if let c = tableView.cellForRow(at: indexPath) as? FaqLabelCell {
 				tableView.beginUpdates()
 				c.expanded = false
-				expandedRows[indexPath.row] = c.expanded
 				tableView.endUpdates()
 			}
+			expandedRows[indexPath.row] = false
 		}
 		
 	}
